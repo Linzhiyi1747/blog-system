@@ -1,25 +1,35 @@
 <html>
+<head>
 <meta charset="utf-8"> 
+<title>register</title>
+<!--<link rel="stylesheet" href="static/css/```.css">-->
+</head>
+
 <body>
-
-
-<form action="http://127.0.0.1:5000/register/" method="POST">
+<script src="/static/js/register.js"> </script>
+<form action="{{url_for('register')}}" method="POST">
 <!-- 
 1. 父模版问题
-2. 表单数据提交到哪里？:/register  可能要用b...元素（设置默认URL）
 3. 背景 布局  
 --> 
 <p style="text-align:center">
 用户名 :<br/>
-<input type="text" name="username" placeholder="用户名格式要求【待填】" >
+<input type="text" id= "uname" class="form-control" name="username" placeholder="请输入6-12位用户名" 
+onblur= "register()">
+<div id="uerror" style="color:red"><br/></div>
 <br/><br/>
 密码 :<br/>
-<input type="password" name="password" placeholder="密码格式要求【待填】">
+<input type="password" id= "pword" class="form-control" name="password" placeholder="请输入6-20位密码"
+onblur= "register()">
+<div id="perror" style="color:red"><br/></div>
 <br/><br/>
-<button type="submit" style="width:145px;height:23px;font-size:16px">注册</button>
-<!-- 
-确认密码？ 
--->
+确认密码 ：<br/>
+<input type="password2" id= "pword2" class="form-control" name="password2" placeholder="请再次输入密码"
+onblur= "register()">
+<div id="perror2" style="color:red"><br/></div>
+<br/><br/>
+<button type="submit" onclick="return register()" style="width:145px;height:23px;font-size:16px">注册</button>
+
 </p>
 </form>
 

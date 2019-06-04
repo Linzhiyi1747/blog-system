@@ -1,0 +1,28 @@
+<html>
+<meta charset="utf-8"> 
+<body>
+
+
+<form action="{{url_for('signin')}}" method="POST">
+<!-- 
+1. 父模版问题
+2. head:登录
+3. 背景 布局  
+4. 用函数防止SQL注入
+5. 检查格式 不通过则不提交表单
+--> 
+<p style="text-align:center">
+用户名 :<br/>
+<input type="text" name="username"  >
+<br/><br/>
+密码 :<br/>
+<input type="password" name="password" >
+<br/><br/>
+<button type="submit" style="width:145px;height:23px;font-size:16px">登录</button>
+
+</p>
+</form>
+
+
+</body>
+</html>
